@@ -1,0 +1,27 @@
+<div class="container align-center">
+  <div class="card text-center">
+    <div class="card-header">Add a task</div>
+    <div class="pb-2">
+      <p>Task Name:</p><input type="text" name="title" [(ngModel)]="newTask.title" required/>
+    </div>
+    <button class="btn btn-success"(click)="saveTask()">Salvar</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">To-Do-List</div>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of list; index as id" class="list-group-item">
+        <div >
+          {{ item.title }}
+
+        </div>
+
+        <a class="btn btn-success m-2" disabled >Visualizar</a>
+        <a  class="btn btn-danger m-2" (click)="delete(item.id)">Excluir</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
