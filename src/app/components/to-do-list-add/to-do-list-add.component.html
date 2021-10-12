@@ -1,0 +1,9 @@
+<div class="container align-center">
+    <div class="card text-center">
+        <app-header></app-header>
+        <div class="p-2">
+            <label>Write the task name:</label><input type="text" name="title" [(ngModel)]="newTask.title" required/>
+        </div>
+        <button class="btn btn-success" (click)="saveTask()">Add</button>
+    </div>
+</div>
