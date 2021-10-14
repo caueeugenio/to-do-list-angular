@@ -1,9 +1,25 @@
-<div class="container align-center">
-    <div class="card text-center">
-        <app-header></app-header>
-        <div class="p-2">
-            <label>Write the task name:</label><input type="text" name="title" [(ngModel)]="newTask.title" required/>
-        </div>
+<div class="container mt-5">
+  <div *ngIf="alert" class="alert alert-success text-center" role="alert">
+    New task added with success! you will be redirect in {{timeLeft}} .
+  </div>
+  <div class="card text-center">
+    <app-header></app-header>
+    <div class="row p-2">
+      <div class="col-sm pt-2">
+        <label>Write the task name:</label>
+      </div>
+      <div class="col-sm">
+        <input
+          class="form-control"
+          type="text"
+          name="title"
+          [(ngModel)]="newTask.title"
+          required
+        />
+      </div>
+      <div class="col-sm">
         <button class="btn btn-success" (click)="saveTask()">Add</button>
+      </div>
     </div>
+  </div>
 </div>

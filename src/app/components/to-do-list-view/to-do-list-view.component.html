@@ -5,15 +5,15 @@
             <li *ngFor="let item of list; index as id" class="list-group-item">
                 <div class="">
                     <span class="form-control" style="background-color: darkolivegreen; color: white">TASK ID: {{ item.id }}
-        
+
           </span>
                     <div class="row">
                         <div class="col">
                             {{ item.title }}
                         </div>
                         <div class="col">
-                            <fa-icon (click)="delete(item.id)" [icon]="deleteIcon" style="color: red; cursor: pointer">
-                            </fa-icon>
+                          <fa-icon (click)="delete(item.id)" [icon]="deleteIcon" style="color: red; cursor: pointer">
+                          </fa-icon>
                         </div>
                         <hr>
                     </div>
@@ -28,7 +28,7 @@
             <tbody>
               <tr>
                 <td scope="row">{{item.title}}</td>
-                <td scope="row"> 
+                <td scope="row">
                   <fa-icon
                   (click)="delete(item.id)"
                   [icon]="deleteIcon"
@@ -37,8 +37,8 @@
               </td>
               </tr>
             </tbody>
-           
-          
+
+
           </table> -->
 
                     <!-- <fa-icon

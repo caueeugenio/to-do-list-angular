@@ -1,16 +1,14 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { ToDoListModel } from "src/app/model/to-do-list-model";
 import { ToDoListViewService } from "./to-do-list-view.service";
 import {
-  faBackward,
   faCheck,
-  faCheckCircle,
   faCheckDouble,
   faCheckSquare,
-  faPause,
   faWindowClose,
 } from "@fortawesome/free-solid-svg-icons";
+
 @Component({
   selector: "app-to-do-list-view",
   templateUrl: "./to-do-list-view.component.html",
@@ -20,7 +18,7 @@ export class ToDoListViewComponent implements OnInit {
   deleteIcon = faWindowClose;
   checkIcon = faCheck;
   uncheckIcon = faCheckDouble;
-  teste = faCheckSquare
+  teste = faCheckSquare;
   status: boolean;
   list: ToDoListModel[];
   taskId: number;
@@ -39,7 +37,6 @@ export class ToDoListViewComponent implements OnInit {
     this.toDoListViewService.getList().subscribe(
       (data) => {
         this.list = data;
-       
       },
       (error) => {
         console.log(error);
