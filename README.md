@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.4.
 
+Version 1.1.0
+![Webp net-gifmaker (1)](https://user-images.githubusercontent.com/52430438/137364933-c34c775f-6e60-4556-be7a-3abfa45dbf92.gif)
+
+Version 1.0.0
 ![image](https://user-images.githubusercontent.com/52430438/130146727-e2b8f1a9-367e-4fcc-9433-9d2f956ca276.png)
 
 
