@@ -6,8 +6,10 @@ import {
   faCheck,
   faCheckDouble,
   faCheckSquare,
+  faEdit,
   faWindowClose,
 } from "@fortawesome/free-solid-svg-icons";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-to-do-list-view",
@@ -16,21 +18,33 @@ import {
 })
 export class ToDoListViewComponent implements OnInit {
   deleteIcon = faWindowClose;
+  editIcon = faEdit;
   checkIcon = faCheck;
   uncheckIcon = faCheckDouble;
   teste = faCheckSquare;
   status: boolean;
   list: ToDoListModel[];
   taskId: number;
+  alert:boolean = false;
+  timeLeft: number = 5;
+  interval;
 
   constructor(
     private toDoListViewService: ToDoListViewService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private location: Location
   ) {}
 
   ngOnInit() {
     this.getTasks();
     this.taskId = this.activatedRoute.snapshot.params.taskId;
+  }
+
+  alertTimer() {
+    setTimeout(() => {
+      this.alert = false;
+      this.getTasks();
+    }, 3000);
   }
 
   getTasks() {
@@ -52,10 +66,14 @@ export class ToDoListViewComponent implements OnInit {
     });
   }
 
+
+
   delete(id: number) {
     this.toDoListViewService.deleteTask(id).subscribe(
       () => {
         this.getTasks();
+        this.alert = true;
+        this.alertTimer();
       },
       (error) => {
         console.log(error);

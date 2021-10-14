@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <div *ngIf="alert" class="alert alert-success text-center" role="alert">
+    The task has edited with success! you will be redirect in {{timeLeft}} .
+  </div>
+  <div class="card text-center">
+    <app-header></app-header>
+    <div class="row p-2">
+      <div class="col-sm pt-2">
+        <label>Task name:</label>
+      </div>
+      <div class="col-sm">
+        <input
+          class="form-control"
+          type="text"
+          name="title"
+          [(ngModel)]="task && task.title"
+          required
+        />
+      </div>
+      <div class="col-sm">
+        <button class="btn btn-success" (click)="saveTask()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

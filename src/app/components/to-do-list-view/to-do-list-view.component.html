@@ -1,24 +1,41 @@
 <div class="container mt-5">
-    <div class="card text-center">
-        <app-header></app-header>
-        <ul class="list-group list-group-flush">
-            <li *ngFor="let item of list; index as id" class="list-group-item">
-                <div class="">
-                    <span class="form-control" style="background-color: darkolivegreen; color: white">TASK ID: {{ item.id }}
-
+  <div *ngIf="alert" class="alert alert-danger text-center" role="alert">
+    The task has excluse with success!.
+  </div>
+  <div class="card text-center">
+    <app-header></app-header>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of list; index as id" class="list-group-item">
+        <div class="">
+          <span
+            class="form-control"
+            style="background-color: darkolivegreen; color: white"
+            >TASK ID: {{ item.id }}
           </span>
-                    <div class="row">
-                        <div class="col">
-                            {{ item.title }}
-                        </div>
-                        <div class="col">
-                          <fa-icon (click)="delete(item.id)" [icon]="deleteIcon" style="color: red; cursor: pointer">
-                          </fa-icon>
-                        </div>
-                        <hr>
-                    </div>
+          <div class="row">
+            <div class="col">
+              {{ item.title }}
+            </div>
+            <div class="col">
+              <fa-icon
+                (click)="delete(item.id)"
+                [icon]="deleteIcon"
+                style="color: red; cursor: pointer"
+              >
+              </fa-icon>
+              <a [routerLink]="['/detail',item.id]">
+                <fa-icon class="p-2"
 
-                    <!-- <table class="table">
+                [icon]="editIcon"
+                style="color: black; cursor: pointer"
+              >
+              </fa-icon>
+            </a>
+            </div>
+            <hr />
+          </div>
+
+          <!-- <table class="table">
             <thead>
               <tr>
                 <th scope="col">name</th>
@@ -41,7 +58,7 @@
 
           </table> -->
 
-                    <!-- <fa-icon
+          <!-- <fa-icon
             (click)="delete(item.id)"
             [icon]="checkIcon"
             style="color: green; cursor: pointer"
@@ -51,10 +68,10 @@
             [icon]="teste"
             style="color: green; cursor: pointer"
           ></fa-icon> -->
-                </div>
+        </div>
 
-                <!-- <a class="btn btn-success m-2" disabled>Visualizar</a> -->
-            </li>
-        </ul>
-    </div>
+        <!--  -->
+      </li>
+    </ul>
+  </div>
 </div>
